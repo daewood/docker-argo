@@ -1,0 +1,13 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: argotest
+spec:
+  template:
+    spec:
+      containers:
+      - name: argo
+        image: argo
+        command: ["help"]
+      restartPolicy: Never
+  backoffLimit: 4
